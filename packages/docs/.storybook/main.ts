@@ -25,12 +25,11 @@ const config: StorybookConfig = {
     "name": getAbsolutePath('@storybook/react-vite'),
     "options": {}
   },
-  viteFinal: (config, { configType }) => {
-    if (configType === 'PRODUCTION') {
-      config.base = '/mariae-design-system/'
-    }
-
-    return config
+  viteFinal: async (config, { configType }) => {
+    return {
+      ...config,
+      base: configType === 'PRODUCTION' ? '/mariae-design-system/' : config.base,
+    };
   }
 };
 export default config;
