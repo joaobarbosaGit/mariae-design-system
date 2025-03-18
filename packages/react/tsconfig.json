@@ -1,0 +1,6 @@
+{
+  "extends": "@mariae-ui/ts-config/react.json",
+  "include": [
+    "src"
+  ]
+}
